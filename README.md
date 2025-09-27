@@ -9,3 +9,5 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 # NPM VRSION:
 
     10.9.0
+
+## thks to https://www.youtube.com/watch?v=hyHmOlpIkVs
