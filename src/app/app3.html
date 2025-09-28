@@ -1,0 +1,16 @@
+<!-- nome proprietà nel component fra quadre per renderla dinamica dall'esterno -->
+<app-counter [title]="'Sono il valore passato dall\'esterno'" [inputObbligatorio]="'obrigado'" />
+<!-- se non passo il valore prende quello di default -->
+<app-counter [numero]="4" [inputObbligatorio]="'obrigado'" [initialCounter]="15" />
+<!-- il valore di initialcounter lo prendo da un signal definito nel padre -->
+<!-- ne modifico il valore con una funzione sempre nel padre -->
+<!--per far funzionare l'increase dello start counter ho bisogno della funzione effect() -->
+<app-counter
+  [title]="'con start counter'"
+  [numero]="4"
+  [inputObbligatorio]="'obrigado'"
+  [initialCounter]="startCounter()"
+/>
+<div>
+  <button (click)="increaseStartCounter()">Increase Start Counter</button>
+</div>

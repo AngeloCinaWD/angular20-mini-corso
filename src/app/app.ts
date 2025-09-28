@@ -10,7 +10,8 @@ import { Box } from './component/box/box';
   selector: 'app-root',
   imports: [FormsModule, Counter, Box],
   // templateUrl: './app.html',
-  templateUrl: './app2.html',
+  // templateUrl: './app2.html',
+  templateUrl: './app3.html',
   styleUrl: './app.css',
 })
 export class App {
@@ -72,4 +73,10 @@ export class App {
   }
 
   computedCounter: Signal<number> = computed<number>((): number => this.counter() * 2);
+
+  startCounter: WritableSignal<number> = signal(100);
+
+  increaseStartCounter(): void {
+    this.startCounter.update((value: number) => value + 50);
+  }
 }
