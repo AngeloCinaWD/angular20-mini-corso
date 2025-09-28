@@ -1,0 +1,21 @@
+.box {
+  background-color: lightblue;
+}
+
+.box2 {
+  background-color: lightcoral;
+}
+
+.btn {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: blue;
+}
+
+.btn-danger {
+  background-color: red;
+}

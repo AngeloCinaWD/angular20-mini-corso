@@ -1,0 +1,29 @@
+<section>
+  <h1>Box</h1>
+  <div [class.box]="box">Content</div>
+  <div [class.box]="boxSignal()" [class.box2]="!boxSignal()">Content2</div>
+  <!-- stessa cosa con attributo class che si aspetta il nome della classe che deve essere assegnata a stringa -->
+  <div [class]="boxSignal() ? 'box2' : 'box'">Content3</div>
+  <div [class]="`${boxSignal() ? box3 : box4}`">Content4</div>
+  <button (click)="toggleBackgroundContent2()">Toggle Content2 background</button>
+  <!-- con style.nomeStyleCss applico direttamente il valore ad una proprietà css, il nome della proprietà è in camelCase -->
+  <div [style.backgroundColor]="bg" [style.color]="color">Applico style</div>
+  <!-- in questo caso i nomi delle proprietà sono in kebab-case, come quando si scrive direttamente nel css -->
+  <div [style]="styleObject">Applico style2</div>
+  <!-- utile per le unità di misura, esempio voglio che il valore che passo sia in pixel -->
+  <div [class.box]="boxSignal()" [style.width.px]="width()">Applico larghezza in pixel</div>
+  <div><button (click)="increaseWidth(50)">Increase width</button></div>
+  <div><button (click)="decreaseWidth(50)">Decrease width</button></div>
+  <h2>ngClass</h2>
+  <!-- con la direttiva ngClass si passa un oggetto con proprietà i nomi delle classi da applicare secondo se hanno value true o false -->
+  <!-- ngClass va importato nel .ts come NgClass -->
+  <button
+    [ngClass]="{ btn: true, 'btn-primary': isPrimary(), 'btn-danger': isDanger() }"
+    (click)="changeStatusButton()"
+  >
+    Cliccami
+  </button>
+  <button [ngClass]="objectNgClass()" (click)="changeStatusButton()">Cliccami</button>
+  <!-- stessa cosa per la direttiva ngStyle -->
+  <div [ngStyle]="objectNgStyle">ngStyle</div>
+</section>

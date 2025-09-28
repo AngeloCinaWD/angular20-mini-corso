@@ -3,11 +3,14 @@ import { RouterOutlet } from '@angular/router';
 import { arrayStudents, Student } from './type/types';
 import { STUDENTS } from './data/students';
 import { FormsModule } from '@angular/forms';
+import { Counter } from './component/counter/counter';
+import { Box } from './component/box/box';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule],
-  templateUrl: './app.html',
+  imports: [FormsModule, Counter, Box],
+  // templateUrl: './app.html',
+  templateUrl: './app2.html',
   styleUrl: './app.css',
 })
 export class App {
