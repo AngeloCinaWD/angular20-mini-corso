@@ -79,4 +79,14 @@ export class App {
   increaseStartCounter(): void {
     this.startCounter.update((value: number) => value + 50);
   }
+
+  // creo un signal nel padre che verrà modificato in two way binding da un componente figlio
+  number: WritableSignal<number> = signal(10000);
+
+  // messaggio da figlio
+  messageSon: WritableSignal<string> = signal('Nessun messaggio');
+
+  displayMessage(message: string) {
+    this.messageSon.set(message);
+  }
 }

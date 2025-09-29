@@ -1,9 +1,14 @@
 import {
   Component,
   effect,
+  EventEmitter,
   input,
   InputSignal,
+  model,
+  ModelSignal,
   OnInit,
+  output,
+  OutputEmitterRef,
   signal,
   WritableSignal,
 } from '@angular/core';
@@ -51,5 +56,23 @@ export class Counter implements OnInit {
 
   increaseCounter(): void {
     this.counter.update((counter: number): number => counter + 1);
+  }
+
+  // per modificare il valore di number nel padre utilizzo la funzione model() un modelsignal
+  // questa nel componente sarà collegata in two way binding con il signal number che sta nel padre
+  num: ModelSignal<number> = model(0);
+
+  // metodo per incrementare num e si incrementerà number nel padre ad esso collegato in two way binding
+  // il set o l'update del model() consentono il two way binding con il padre, quindi un cambiamento del signal viene notificato anche al signal che sta nel padre ed è legato tramite 2 way binding con [()]
+  increaseNumber(): void {
+    this.num.update((num: number) => num + 100);
+  }
+
+  // il decoratore @Output è stato sostituito con output()
+  // crea un signal OutputEmitterRef che emette un evento che può essere ascoltato dal padre (eventoCustom)="handler($event)"
+  messageSent: OutputEmitterRef<string> = output();
+
+  sendMessage(): void {
+    this.messageSent.emit('ciao sono un messaggio emesso da un figlio');
   }
 }

@@ -14,3 +14,19 @@
 <div>
   <button (click)="increaseStartCounter()">Increase Start Counter</button>
 </div>
+<app-counter
+  [title]="'con model()'"
+  [inputObbligatorio]="'obrigado dal figlio al padre con model()'"
+  [(num)]="number"
+/>
+
+<div>Number dal padre, proprietà in app3.html: {{ number() }}</div>
+<div>
+  <app-counter
+    [title]="'con output()'"
+    [inputObbligatorio]="'obrigado dal figlio al padre con model()'"
+    [(num)]="number"
+    (messageSent)="displayMessage($event)"
+  />
+</div>
+<div>Message from son: {{ messageSon() }}</div>
