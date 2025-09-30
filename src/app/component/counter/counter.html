@@ -14,4 +14,7 @@
   <div>
     <button (click)="sendMessage()">Send message to father</button>
   </div>
+  <ng-content></ng-content>
+  <!-- per creare uno slot nominale utilizzo l'attributo select in cui indico il nome dello slot -->
+  <ng-content select="slot_nominale"></ng-content>
 </section>

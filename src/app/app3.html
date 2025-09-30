@@ -30,3 +30,15 @@
   />
 </div>
 <div>Message from son: {{ messageSon() }}</div>
+<div>
+  <app-counter
+    [title]="'con ng-content'"
+    [inputObbligatorio]="'obrigado dal figlio al padre con model()'"
+  >
+    <div>sono un div passato tramite ng content al figlio</div>
+    <!-- per passare contenuto html ad uno slot nominale devo indicare nel tag html il nome dello slot -->
+    <div slot_nominale>
+      sono un div passato tramite ng content al figlio ad un ng-content nominale
+    </div>
+  </app-counter>
+</div>
