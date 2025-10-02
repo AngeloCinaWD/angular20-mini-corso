@@ -5,13 +5,15 @@ import { STUDENTS } from './data/students';
 import { FormsModule } from '@angular/forms';
 import { Counter } from './component/counter/counter';
 import { Box } from './component/box/box';
+import { Box2 } from './component/box2/box2';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, Counter, Box],
+  imports: [FormsModule, Counter, Box, Box2],
   // templateUrl: './app.html',
   // templateUrl: './app2.html',
-  templateUrl: './app3.html',
+  // templateUrl: './app3.html',
+  templateUrl: './app4.html',
   styleUrl: './app.css',
 })
 export class App {
