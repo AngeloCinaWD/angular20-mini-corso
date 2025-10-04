@@ -1,3 +1,32 @@
 <!-- utilizzo delle pipes di angular per formattare i dati dall'html senza andare a scrive codice nel model -->
 <!-- capitalize è una pipe custom che prende tutta la stringa e ritorna la prima lettera maiuscola e tutto il resto minuscolo -->
 <div>{{ description() | uppercase | slice : 0 : 20 | capitalize : 1 : [2] : 3 : 4 }}</div>
+
+<h2>Students</h2>
+<!-- dal template posso utilizzare direttamente il service iniettato nel model -->
+@for (student of students.students; track student.id) {
+<div>{{ student.fullname }}: {{ student.rate }}</div>
+}
+
+<!-- chiamando il metodo best del service ottengo lo studente col miglior voto -->
+<div>
+  Lo studente migliore è:
+  {{ students.getBest()?.fullname ?? 'Non ci sono studenti' }}
+</div>
+
+<h2>Students list from signal</h2>
+@for (student of studentsList(); track student.id) {
+<div>{{ student.fullname }}: {{ student.rate }}</div>
+}
+
+<div><button (click)="addStudent()">Add student</button></div>
+
+<div>
+  Lo studente migliore from signal è:
+  {{ students.getBest(studentsList())?.fullname ?? 'Non ci sono studenti' }}
+</div>
+
+<div>
+  Lo studente migliore from signal computed è:
+  {{ bestStudent()?.fullname }}
+</div>
