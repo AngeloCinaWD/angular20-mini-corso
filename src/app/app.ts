@@ -6,14 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { Counter } from './component/counter/counter';
 import { Box } from './component/box/box';
 import { Box2 } from './component/box2/box2';
+import { HttpServer } from './component/http-server/http-server';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, Counter, Box, Box2],
+  imports: [FormsModule, Counter, Box, Box2, HttpServer],
   // templateUrl: './app.html',
   // templateUrl: './app2.html',
   // templateUrl: './app3.html',
-  templateUrl: './app4.html',
+  // templateUrl: './app4.html',
+  templateUrl: './app5.html',
   styleUrl: './app.css',
 })
 export class App {

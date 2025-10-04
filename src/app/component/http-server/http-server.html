@@ -1,0 +1,20 @@
+<h1>HTTPClient</h1>
+
+<h2>Posts</h2>
+
+<button (click)="loadPosts()">Fetcha posts</button>
+@if (posts().length) {
+<button (click)="addPost()">Add post</button>
+}
+<!--  -->
+@if (loading()) {
+<div>Loading posts...</div>
+} @else {
+<!--  -->
+@for (post of posts(); track post.id) {
+<div>{{ post.title }}</div>
+} @empty {
+<div>Non ci sono posts</div>
+}
+<!--  -->
+}
