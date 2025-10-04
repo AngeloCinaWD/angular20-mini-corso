@@ -19,7 +19,8 @@ export class HttpServer {
 
   loading: WritableSignal<boolean> = signal(false);
 
-  placeHolderUrl: string = 'https://jsonplaceholder.typicode.com/posts';
+  // placeHolderUrl: string = 'https://jsonplaceholder.typicode.com/posts';
+  placeHolderUrl: string = 'http://localhost:3000/posts';
 
   // metodo per fetchare i posts
   loadPosts(): void {
@@ -32,7 +33,7 @@ export class HttpServer {
       await new Promise((resolve) => setTimeout(resolve, 3000));
 
       this.loading.set(false);
-      this.posts.set(posts);
+      this.posts.set(posts.reverse());
     });
   }
 

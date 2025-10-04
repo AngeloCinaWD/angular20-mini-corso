@@ -13,3 +13,5 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 ## thks to https://www.youtube.com/watch?v=hyHmOlpIkVs
 
 ## [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
+
+## [json-server](https://github.com/typicode/json-server)
